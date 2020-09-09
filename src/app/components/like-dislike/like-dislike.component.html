@@ -1,0 +1,6 @@
+<div>
+    <button class="like-button" (click) = "updateCount('like')" [ngClass] = "{'liked' : isLiked}">Like
+        <span class="likes-counter">{{likeCount}}</span></button>
+    <button class="dislike-button" (click) = "updateCount('dislike')">Dislike
+        <span class="dislikes-counter">{{dislikeCount}}</span></button>
+</div>

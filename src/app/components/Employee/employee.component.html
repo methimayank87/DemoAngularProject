@@ -1,0 +1,47 @@
+<h1> Employee Details : </h1>
+<!--<p>Subjects:<span *ngFor="let s of Subjects">{{s+" , "}}</span></p>
+//<span *ngIf="ShowFaculty">{{FacultyName}}</span>-->
+
+<table>
+    <thead>
+        <th>Code</th>
+        <th>Name</th>
+        <th>Gender</th>
+        <th>Salary</th>
+        <th>DOB</th>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let emp of employees">
+            <td>{{emp.code}}</td>
+            <td>{{emp.name |uppercase | myFilterForGender:emp.gender}}</td>
+            <td>{{emp.gender}}</td>
+            <td>{{emp.annualSalary}}</td>
+            <td>{{emp.dateOfBirth}}</td>
+        </tr>
+        <tr *ngIf = "employees.length==0 || !employees">
+            <td colspan = "5">No employees to display</td>
+        </tr>
+    </tbody>
+</table>
+
+<table>
+    <thead>
+        <tr>
+            <td>ID</td>
+            <td>Name</td>
+            <td>Cost</td>
+            <td>Category</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let pro of products">
+            <td>{{pro.id}}</td>
+            <td>{{pro.name}}</td>
+            <td>{{pro.cost}}</td>
+            <td>{{pro.category}}</td>
+        </tr>
+    </tbody>
+</table>
+<button class='btn btn-primary'(click) = "myFunction()">Click me</button>
+<button (click) = "deleteProd(100)">Delete</button>
+<button (click) = "editProd(100 , 'oneplus6t')">Edit</button>
